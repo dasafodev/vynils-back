@@ -36,11 +36,7 @@ import { TrackModule } from './track/track.module';
   imports: [
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: process.env.DB_HOST || 'localhost',
-      port: 5432,
-      username: 'postgres',
-      password: 'postgres',
-      database: 'vinyls',
+      url: process.env.DATABASE_URL,
       entities: [
         Album,
         CollectorAlbum,
